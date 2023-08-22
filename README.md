@@ -1,9 +1,17 @@
 # 📦 Streamlit App Starter Kit 
 ```
-⬆️ (Replace above with your app's name)
+⬆️ Crave: Find food in a flash
 ```
 
-Description of the app ...
+Crave is an app that helps you find food in a flash based on your location and taste. Whether you are hungry, in a hurry, or just feeling adventurous, Crave can show you the best places to eat near you.
+
+With Crave, you can:
+
+See the most popular and highly rated restaurants in your area.
+Filter restaurants by cuisine, budget, and distance from your location.
+Order food online from the app or get directions to the restaurant.
+Rate and review the restaurants you visit and earn rewards.
+Crave is your ultimate app to satisfy your hunger and discover new flavors. Download Crave today and get ready to bite.
 
 ## Demo App
 
