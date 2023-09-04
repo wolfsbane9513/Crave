@@ -1,0 +1,64 @@
+{
+    "conversation_id": "8b1df71c-6161-488e-98a3-2f03ffd505e4",
+    "start_time": "2023_08_26:14:27:58",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:14:27:58",
+            "prompt_id": "89e07b3a-0738-48cc-bdf3-fe32dd7b3070",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nInput: Good food served here. Every item in the menu worth trying. Amazing starters. You can request for extra spice in all the dishes served here. Excellent tandoori starters. Over all satisfied in every aspect. Food, atmosphere and the service. Must visit.\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "domain": "food items",
+                "text_input": "Good food served here. Every item in the menu worth trying. Amazing starters. You can request for extra spice in all the dishes served here. Excellent tandoori starters. Over all satisfied in every aspect. Food, atmosphere and the service. Must visit.",
+                "output_format": null,
+                "description": null,
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL"
+                ],
+                "examples": null
+            },
+            "response_text": "[{'T': 'DISH NAME', 'E': 'starters'}, {'T': 'DISH NAME', 'E': 'dishes'}, {'T': 'DISH NAME', 'E': 'tandoori starters'}]",
+            "parsed_output": [
+                {
+                    "T": "DISH NAME",
+                    "E": "starters"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "dishes"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "tandoori starters"
+                }
+            ]
+        }
+    ]
+}

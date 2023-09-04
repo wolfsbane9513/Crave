@@ -1,0 +1,64 @@
+{
+    "conversation_id": "d64a4a8a-f78d-41a6-a03b-f03eb8bb3211",
+    "start_time": "2023_08_26:12:17:59",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:12:17:59",
+            "prompt_id": "e304be64-a522-41b3-b7a1-22f3988c8499",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nInput: I ordered Gobi fried rice along with paneer Manchurian and I experienced the worst ever meal I ordered till date. Swear will never order food from this restaurant ever.\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "domain": "food items",
+                "description": null,
+                "text_input": "I ordered Gobi fried rice along with paneer Manchurian and I experienced the worst ever meal I ordered till date. Swear will never order food from this restaurant ever.",
+                "examples": null,
+                "output_format": null,
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL"
+                ]
+            },
+            "response_text": "[{'T': 'DISH NAME', 'E': 'Gobi fried rice'}, {'T': 'DISH NAME', 'E': 'paneer Manchurian'}, {'T': 'TASTE LEVEL', 'E': 'worst ever meal'}]",
+            "parsed_output": [
+                {
+                    "T": "DISH NAME",
+                    "E": "Gobi fried rice"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "paneer Manchurian"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "worst ever meal"
+                }
+            ]
+        }
+    ]
+}

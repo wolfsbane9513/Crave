@@ -1,0 +1,96 @@
+{
+    "conversation_id": "a21f02e5-e4e0-4e63-a0ff-8cf2536343a1",
+    "start_time": "2023_08_26:13:44:31",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:13:44:31",
+            "prompt_id": "bd1b3334-4d08-42f9-9288-377d498b7ebd",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nInput: Unfortunately I had a bad experience that day with this dhaba.\nFood taste were good. I ordered garlic and butter naan with a Punjabi spicy chicken masala. Everything tasted very good.\n\nBut the buttermilk which I had over there was made with some infected water i guess. The next day i had throat pain and eventually it lead to bacterial infection in tonsils. I had to be hospitalised and for 3 days and it took almost 10days to cure.\n\nJust a negative review from me. May be i had a bad day that day.\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL"
+                ],
+                "domain": "food items",
+                "output_format": null,
+                "examples": null,
+                "description": null,
+                "text_input": "Unfortunately I had a bad experience that day with this dhaba.\nFood taste were good. I ordered garlic and butter naan with a Punjabi spicy chicken masala. Everything tasted very good.\n\nBut the buttermilk which I had over there was made with some infected water i guess. The next day i had throat pain and eventually it lead to bacterial infection in tonsils. I had to be hospitalised and for 3 days and it took almost 10days to cure.\n\nJust a negative review from me. May be i had a bad day that day."
+            },
+            "response_text": "[{'T': 'DISH NAME', 'E': 'garlic and butter naan'}, {'T': 'DISH NAME', 'E': 'Punjabi spicy chicken masala'}, {'T': 'TASTE LEVEL', 'E': 'good'}, {'T': 'TASTE LEVEL', 'E': 'good'}, {'T': 'DISH NAME', 'E': 'buttermilk'}, {'T': 'TASTE LEVEL', 'E': 'infected'}, {'T': 'TASTE LEVEL', 'E': 'throat pain'}, {'T': 'TASTE LEVEL', 'E': 'bacterial infection'}, {'T': 'TASTE LEVEL', 'E': 'hospitalised'}, {'T': 'TASTE LEVEL', 'E': 'cure'}, {'branch': 'dhaba', 'group': 'bad experience'}]",
+            "parsed_output": [
+                {
+                    "T": "DISH NAME",
+                    "E": "garlic and butter naan"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Punjabi spicy chicken masala"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "good"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "good"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "buttermilk"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "infected"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "throat pain"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "bacterial infection"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "hospitalised"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "cure"
+                },
+                {
+                    "branch": "dhaba",
+                    "group": "bad experience"
+                }
+            ]
+        }
+    ]
+}

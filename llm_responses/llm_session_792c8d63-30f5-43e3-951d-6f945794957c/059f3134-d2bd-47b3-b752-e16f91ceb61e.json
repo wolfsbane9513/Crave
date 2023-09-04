@@ -1,0 +1,65 @@
+{
+    "conversation_id": "792c8d63-30f5-43e3-951d-6f945794957c",
+    "start_time": "2023_08_26:11:36:14",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:11:36:14",
+            "prompt_id": "3346956e-2879-4478-949e-a584945e7031",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food domain named entities in that given passage and classify into a set of entity types.Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nInput: The patient is a 93-year-old female with a medical  \t\t\t\t \n                history of chronic right hip pain, osteoporosis,\t\t\t\t\t\n                hypertension, depression, and chronic atrial\t\t\t\t\t\t\n                fibrillation admitted for evaluation and management\t\t\t\t\n                of severe nausea and vomiting and urinary tract\t\t\t\t\n                infection\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "domain": "food",
+                "output_format": null,
+                "labels": null,
+                "examples": null,
+                "text_input": "The patient is a 93-year-old female with a medical  \t\t\t\t \n                history of chronic right hip pain, osteoporosis,\t\t\t\t\t\n                hypertension, depression, and chronic atrial\t\t\t\t\t\t\n                fibrillation admitted for evaluation and management\t\t\t\t\n                of severe nausea and vomiting and urinary tract\t\t\t\t\n                infection",
+                "description": null
+            },
+            "response_text": "[{'T': 'food', 'E': 'nausea'}, {'T': 'food', 'E': 'vomiting'}, {'T': 'food', 'E': 'urinary tract infection'}, {'branch': 'Evaluation and Management', 'group': 'Admission'}]",
+            "parsed_output": [
+                {
+                    "T": "food",
+                    "E": "nausea"
+                },
+                {
+                    "T": "food",
+                    "E": "vomiting"
+                },
+                {
+                    "T": "food",
+                    "E": "urinary tract infection"
+                },
+                {
+                    "branch": "Evaluation and Management",
+                    "group": "Admission"
+                }
+            ]
+        }
+    ]
+}

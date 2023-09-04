@@ -1,0 +1,121 @@
+{
+    "conversation_id": "d50ded73-4e9d-4fe5-bd0e-22729cddf809",
+    "start_time": "2023_08_28:22:13:18",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_28:22:13:18",
+            "prompt_id": "c36e22cd-0e6a-427e-a9a7-5fd40220cbd4",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL', 'AMBIENCE']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nExamples:\n\nInput: 5 stars to this place. Excellent food. Can be customised to your taste buds liking!! Fabulous service and attitude of staff.Self Parking is a challenge however valet takes care of your car if you are comfortable. Located in the heart of the city - KoramangalaTasty lip smacking food. They start with a garlic bread with tomato and basil spread (complimentary).\n You feel hungry when you eat this until your actual order comes. \nSoups a must try. In starters, one should try the mushroom oil fried with garlic,it was yummy. It’s delicious dish and you will want to eat it again and again. Main courses are pasta and pizza, nothing great. Overall the ambience and service of the staff is excellent. Must visit.Recently, I had the pleasure of dining at a delightful Italian restaurant that transported me straight to the heart of Italy. \nFrom the moment I entered, the warm and inviting atmosphere, accompanied by the aromas of freshly baked bread and simmering sauces,\n set the stage for an unforgettable culinary experience.\nThe ambiance of the Italian restaurant was a perfect blend of rustic charm and contemporary elegance.\nThe soft lighting, cozy seating arrangements, and tasteful décor created an intimate and welcoming atmosphere.\nThe walls adorned with vintage photographs and paintings added a touch of authenticity, \nwhile the soothing background music enhanced the overall dining experience. The attentive and friendly staff further elevated the ambiance,\n making me feel like a cherished guest.\nOutput: [[{'E': 'garlic bread', 'T': 'DISH NAME'}, {'E': 'pasta', 'T': 'DISH NAME'}, {'E': 'pizza', 'T': 'DISH NAME'}, {'E': 'tomato and basilspread', 'T': 'DISH NAME'}, {'E': 'taste bud liking', 'T': 'TASTE LEVEL'}, {'E': 'delicious', 'T': 'TASTE LEVEL'}]]\n\nInput: Such a great place for Italian food. Good ambiance and quick service. I tried this place finally during a dine-in promotion after it being on my list for a long time. The food absolutely did not disappoint and I got to try some new dishes.\n\nWe got the Chicken Ravioli, Spinach Risotto, Fettuccine, Lamb Lasagna, the non-veg platter and a Pizza. It sounds like a lot of food and for sure it was. The highlight for me was the Ravioli and the Non-veg platter which had this Pesto chicken topped Garlic bread. Absolutely perfect. Quantity for the platter is good for 4 people and I recommend it if you are in a group or 2 heavy eaters. Risotto was nice and creamy and this along with the Lasagna felt like the perfect comfort food.\n\nFor drinks I tried the Sangria and the Mango Margerita. Wine is also available so you can consider those if you prefer drinking.\n\nPro tip:\n1. Choose some of the better lit tables near the walls and AC because the throw is limited.\n2. Do try some of the more rarer kinds of pasta on offer here. Find a dish that catches your eye and a quick google will tell you what it actually looks like considering the fancy names which are confusing.\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "domain": "food items",
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL",
+                    "AMBIENCE"
+                ],
+                "examples": [
+                    [
+                        "5 stars to this place. Excellent food. Can be customised to your taste buds liking!! Fabulous service and attitude of staff.Self Parking is a challenge however valet takes care of your car if you are comfortable. Located in the heart of the city - KoramangalaTasty lip smacking food. They start with a garlic bread with tomato and basil spread (complimentary).\n You feel hungry when you eat this until your actual order comes. \nSoups a must try. In starters, one should try the mushroom oil fried with garlic,it was yummy. It’s delicious dish and you will want to eat it again and again. Main courses are pasta and pizza, nothing great. Overall the ambience and service of the staff is excellent. Must visit.Recently, I had the pleasure of dining at a delightful Italian restaurant that transported me straight to the heart of Italy. \nFrom the moment I entered, the warm and inviting atmosphere, accompanied by the aromas of freshly baked bread and simmering sauces,\n set the stage for an unforgettable culinary experience.\nThe ambiance of the Italian restaurant was a perfect blend of rustic charm and contemporary elegance.\nThe soft lighting, cozy seating arrangements, and tasteful décor created an intimate and welcoming atmosphere.\nThe walls adorned with vintage photographs and paintings added a touch of authenticity, \nwhile the soothing background music enhanced the overall dining experience. The attentive and friendly staff further elevated the ambiance,\n making me feel like a cherished guest.",
+                        [
+                            {
+                                "E": "garlic bread",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "pasta",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "pizza",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "tomato and basilspread",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "taste bud liking",
+                                "T": "TASTE LEVEL"
+                            },
+                            {
+                                "E": "delicious",
+                                "T": "TASTE LEVEL"
+                            }
+                        ]
+                    ]
+                ],
+                "description": null,
+                "output_format": null,
+                "text_input": "Such a great place for Italian food. Good ambiance and quick service. I tried this place finally during a dine-in promotion after it being on my list for a long time. The food absolutely did not disappoint and I got to try some new dishes.\n\nWe got the Chicken Ravioli, Spinach Risotto, Fettuccine, Lamb Lasagna, the non-veg platter and a Pizza. It sounds like a lot of food and for sure it was. The highlight for me was the Ravioli and the Non-veg platter which had this Pesto chicken topped Garlic bread. Absolutely perfect. Quantity for the platter is good for 4 people and I recommend it if you are in a group or 2 heavy eaters. Risotto was nice and creamy and this along with the Lasagna felt like the perfect comfort food.\n\nFor drinks I tried the Sangria and the Mango Margerita. Wine is also available so you can consider those if you prefer drinking.\n\nPro tip:\n1. Choose some of the better lit tables near the walls and AC because the throw is limited.\n2. Do try some of the more rarer kinds of pasta on offer here. Find a dish that catches your eye and a quick google will tell you what it actually looks like considering the fancy names which are confusing."
+            },
+            "response_text": "[[{'E': 'Chicken Ravioli', 'T': 'DISH NAME'}, {'E': 'Spinach Risotto', 'T': 'DISH NAME'}, {'E': 'Fettuccine', 'T': 'DISH NAME'}, {'E': 'Lamb Lasagna', 'T': 'DISH NAME'}, {'E': 'Non-veg platter', 'T': 'DISH NAME'}, {'E': 'Pizza', 'T': 'DISH NAME'}, {'E': 'Pesto chicken topped Garlic bread', 'T': 'DISH NAME'}, {'E': 'Sangria', 'T': 'DISH NAME'}, {'E': 'Mango Margerita', 'T': 'DISH NAME'}]]",
+            "parsed_output": [
+                [
+                    {
+                        "E": "Chicken Ravioli",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Spinach Risotto",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Fettuccine",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Lamb Lasagna",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Non-veg platter",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Pizza",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Pesto chicken topped Garlic bread",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Sangria",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "Mango Margerita",
+                        "T": "DISH NAME"
+                    }
+                ]
+            ]
+        }
+    ]
+}

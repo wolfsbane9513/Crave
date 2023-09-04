@@ -1,0 +1,80 @@
+{
+    "conversation_id": "cefa3482-6764-4715-a1a2-190daa00a20e",
+    "start_time": "2023_08_26:14:23:11",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:14:23:11",
+            "prompt_id": "22810490-ad3b-48a5-9422-d480914851e6",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nInput: I loved the last lemon chicken the biryani rice and the Lassi was amazing and the. Chicken lollipop too. Their service was also great.\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "text_input": "I loved the last lemon chicken the biryani rice and the Lassi was amazing and the. Chicken lollipop too. Their service was also great.",
+                "description": null,
+                "domain": "food items",
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL"
+                ],
+                "output_format": null,
+                "examples": null
+            },
+            "response_text": "[{'T': 'DISH NAME', 'E': 'lemon chicken'}, {'T': 'DISH NAME', 'E': 'biryani rice'}, {'T': 'DISH NAME', 'E': 'Lassi'}, {'T': 'DISH NAME', 'E': 'Chicken lollipop'}, {'T': 'TASTE LEVEL', 'E': 'amazing'}, {'T': 'TASTE LEVEL', 'E': 'great'}, {'branch': 'last', 'group': 'loved the last lemon chicken the biryani rice and the Lassi was amazing and the. Chicken lollipop too. Their service was also great.'}]",
+            "parsed_output": [
+                {
+                    "T": "DISH NAME",
+                    "E": "lemon chicken"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "biryani rice"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Lassi"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Chicken lollipop"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "amazing"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "great"
+                },
+                {
+                    "branch": "last",
+                    "group": "loved the last lemon chicken the biryani rice and the Lassi was amazing and the. Chicken lollipop too. Their service was also great."
+                }
+            ]
+        }
+    ]
+}

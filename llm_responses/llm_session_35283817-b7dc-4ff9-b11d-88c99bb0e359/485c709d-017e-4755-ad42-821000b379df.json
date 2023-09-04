@@ -1,0 +1,113 @@
+{
+    "conversation_id": "35283817-b7dc-4ff9-b11d-88c99bb0e359",
+    "start_time": "2023_08_26:16:06:54",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:16:06:54",
+            "prompt_id": "a90fcfe6-038c-4454-b9c8-49d939949412",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL', 'AMBIENCE']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nExamples:\n\nInput: 5 stars to this place. Excellent food. Can be customised to your taste buds liking!! Fabulous service and attitude of staff.Self Parking is a challenge however valet takes care of your car if you are comfortable. Located in the heart of the city - KoramangalaTasty lip smacking food. They start with a garlic bread with tomato and basil spread (complimentary).\n You feel hungry when you eat this until your actual order comes. \nSoups a must try. In starters, one should try the mushroom oil fried with garlic,it was yummy. It’s delicious dish and you will want to eat it again and again. Main courses are pasta and pizza, nothing great. Overall the ambience and service of the staff is excellent. Must visit.Recently, I had the pleasure of dining at a delightful Italian restaurant that transported me straight to the heart of Italy. \nFrom the moment I entered, the warm and inviting atmosphere, accompanied by the aromas of freshly baked bread and simmering sauces,\n set the stage for an unforgettable culinary experience.\nThe ambiance of the Italian restaurant was a perfect blend of rustic charm and contemporary elegance.\nThe soft lighting, cozy seating arrangements, and tasteful décor created an intimate and welcoming atmosphere.\nThe walls adorned with vintage photographs and paintings added a touch of authenticity, \nwhile the soothing background music enhanced the overall dining experience. The attentive and friendly staff further elevated the ambiance,\n making me feel like a cherished guest.\nOutput: [[{'E': 'garlic bread', 'T': 'DISH NAME'}, {'E': 'pasta', 'T': 'DISH NAME'}, {'E': 'pizza', 'T': 'DISH NAME'}, {'E': 'tomato and basilspread', 'T': 'DISH NAME'}, {'E': 'taste bud liking', 'T': 'TASTE LEVEL'}, {'E': 'delicious', 'T': 'TASTE LEVEL'}]]\n\nInput: Dropped in to Chianti on a whim, since we were in the neighbourhood and felt like a spot of Italian.\n\nThe service staff were fantastic, right from Prakriti at the front desk, to our server Digen, the manager (whose name I didn’t get, unfortunately), and the friendly chef going table to table to chat with customers.\n\nWe ordered the Mare e Monti (a surf and turf, essentially, with beef done your way and served with a gigantic grilled prawn) and a fillet of fish served in a classic lemon butter sauce with capers.\n\nThe food was faultless, and as good as any I’ve had anywhere, with generous portion sizes on offer. The staff were generous enough to get us a complementary dessert for no reason other than the fact that we had to wait some 20 mins for a table, through no fault of theirs.\n\nHeartily recommended to anyone looking for high quality Italian food. Would happily return here again for a slice of la dolce vita.\n\nDigen\n\nPrakriti\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "text_input": "Dropped in to Chianti on a whim, since we were in the neighbourhood and felt like a spot of Italian.\n\nThe service staff were fantastic, right from Prakriti at the front desk, to our server Digen, the manager (whose name I didn’t get, unfortunately), and the friendly chef going table to table to chat with customers.\n\nWe ordered the Mare e Monti (a surf and turf, essentially, with beef done your way and served with a gigantic grilled prawn) and a fillet of fish served in a classic lemon butter sauce with capers.\n\nThe food was faultless, and as good as any I’ve had anywhere, with generous portion sizes on offer. The staff were generous enough to get us a complementary dessert for no reason other than the fact that we had to wait some 20 mins for a table, through no fault of theirs.\n\nHeartily recommended to anyone looking for high quality Italian food. Would happily return here again for a slice of la dolce vita.\n\nDigen\n\nPrakriti",
+                "output_format": null,
+                "domain": "food items",
+                "description": null,
+                "examples": [
+                    [
+                        "5 stars to this place. Excellent food. Can be customised to your taste buds liking!! Fabulous service and attitude of staff.Self Parking is a challenge however valet takes care of your car if you are comfortable. Located in the heart of the city - KoramangalaTasty lip smacking food. They start with a garlic bread with tomato and basil spread (complimentary).\n You feel hungry when you eat this until your actual order comes. \nSoups a must try. In starters, one should try the mushroom oil fried with garlic,it was yummy. It’s delicious dish and you will want to eat it again and again. Main courses are pasta and pizza, nothing great. Overall the ambience and service of the staff is excellent. Must visit.Recently, I had the pleasure of dining at a delightful Italian restaurant that transported me straight to the heart of Italy. \nFrom the moment I entered, the warm and inviting atmosphere, accompanied by the aromas of freshly baked bread and simmering sauces,\n set the stage for an unforgettable culinary experience.\nThe ambiance of the Italian restaurant was a perfect blend of rustic charm and contemporary elegance.\nThe soft lighting, cozy seating arrangements, and tasteful décor created an intimate and welcoming atmosphere.\nThe walls adorned with vintage photographs and paintings added a touch of authenticity, \nwhile the soothing background music enhanced the overall dining experience. The attentive and friendly staff further elevated the ambiance,\n making me feel like a cherished guest.",
+                        [
+                            {
+                                "E": "garlic bread",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "pasta",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "pizza",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "tomato and basilspread",
+                                "T": "DISH NAME"
+                            },
+                            {
+                                "E": "taste bud liking",
+                                "T": "TASTE LEVEL"
+                            },
+                            {
+                                "E": "delicious",
+                                "T": "TASTE LEVEL"
+                            }
+                        ]
+                    ]
+                ],
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL",
+                    "AMBIENCE"
+                ]
+            },
+            "response_text": "[[{'E': 'Mare e Monti', 'T': 'DISH NAME'}, {'E': 'beef', 'T': 'DISH NAME'}, {'E': 'gigantic grilled prawn', 'T': 'DISH NAME'}, {'E': 'fish', 'T': 'DISH NAME'}, {'E': 'lemon butter sauce', 'T': 'DISH NAME'}, {'E': 'capers', 'T': 'DISH NAME'}, {'E': 'high quality Italian food', 'T': 'DISH NAME'}]]",
+            "parsed_output": [
+                [
+                    {
+                        "E": "Mare e Monti",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "beef",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "gigantic grilled prawn",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "fish",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "lemon butter sauce",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "capers",
+                        "T": "DISH NAME"
+                    },
+                    {
+                        "E": "high quality Italian food",
+                        "T": "DISH NAME"
+                    }
+                ]
+            ]
+        }
+    ]
+}

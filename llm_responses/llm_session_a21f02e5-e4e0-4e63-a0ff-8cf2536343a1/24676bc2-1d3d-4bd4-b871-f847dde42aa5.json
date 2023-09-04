@@ -1,0 +1,104 @@
+{
+    "conversation_id": "a21f02e5-e4e0-4e63-a0ff-8cf2536343a1",
+    "start_time": "2023_08_26:13:44:52",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:13:44:52",
+            "prompt_id": "25d29bc2-4429-4c3d-84c0-aa97f4527e14",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nInput: Sri Udupi Park emerges as a highly appealing choice for indulging in vegetarian delicacies, especially in close proximity to Phoenix Mall. My recurrent visits have primarily revolved around their delightful breakfast offerings, and I once dined here for dinner as well. Conveniently situated opposite Phoenix Mall, the restaurant is easily accessible with a walkable distance of nearly a kilometer. Notably, Sri Udupi Park serves as the designated in-house restaurant for 15505 Royal Stay, where guests availing meal options through Oyo are treated to complimentary breakfast.\n\nThe restaurant operates across two well-organized floors, with the ground floor dedicated to self-service arrangements, while the first floor boasts an expansive seating capacity, ensuring prompt and efficient service. Their menu is truly captivating, featuring an impressive selection of vegetarian delights thoughtfully curated from South Indian, Chinese, and North Indian cuisines. Furthermore, the tempting assortment of sweets near the entrance adds a delightful touch to the overall dining experience.\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL"
+                ],
+                "domain": "food items",
+                "output_format": null,
+                "examples": null,
+                "description": null,
+                "text_input": "Sri Udupi Park emerges as a highly appealing choice for indulging in vegetarian delicacies, especially in close proximity to Phoenix Mall. My recurrent visits have primarily revolved around their delightful breakfast offerings, and I once dined here for dinner as well. Conveniently situated opposite Phoenix Mall, the restaurant is easily accessible with a walkable distance of nearly a kilometer. Notably, Sri Udupi Park serves as the designated in-house restaurant for 15505 Royal Stay, where guests availing meal options through Oyo are treated to complimentary breakfast.\n\nThe restaurant operates across two well-organized floors, with the ground floor dedicated to self-service arrangements, while the first floor boasts an expansive seating capacity, ensuring prompt and efficient service. Their menu is truly captivating, featuring an impressive selection of vegetarian delights thoughtfully curated from South Indian, Chinese, and North Indian cuisines. Furthermore, the tempting assortment of sweets near the entrance adds a delightful touch to the overall dining experience."
+            },
+            "response_text": "[{'T': 'DISH NAME', 'E': 'vegetarian delicacies'}, {'T': 'DISH NAME', 'E': 'breakfast offerings'}, {'T': 'DISH NAME', 'E': 'dinner'}, {'T': 'BRANCH', 'E': 'Sri Udupi Park'}, {'T': 'BRANCH', 'E': 'Phoenix Mall'}, {'T': 'GROUP', 'E': '15505 Royal Stay'}, {'T': 'DISH NAME', 'E': 'complimentary breakfast'}, {'T': 'GROUP', 'E': 'self-service arrangements'}, {'T': 'DISH NAME', 'E': 'vegetarian delights'}, {'T': 'DISH NAME', 'E': 'South Indian'}, {'T': 'DISH NAME', 'E': 'Chinese'}, {'T': 'DISH NAME', 'E': 'North Indian'}, {'T': 'DISH NAME', 'E': 'sweets'}]",
+            "parsed_output": [
+                {
+                    "T": "DISH NAME",
+                    "E": "vegetarian delicacies"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "breakfast offerings"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "dinner"
+                },
+                {
+                    "T": "BRANCH",
+                    "E": "Sri Udupi Park"
+                },
+                {
+                    "T": "BRANCH",
+                    "E": "Phoenix Mall"
+                },
+                {
+                    "T": "GROUP",
+                    "E": "15505 Royal Stay"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "complimentary breakfast"
+                },
+                {
+                    "T": "GROUP",
+                    "E": "self-service arrangements"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "vegetarian delights"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "South Indian"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Chinese"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "North Indian"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "sweets"
+                }
+            ]
+        }
+    ]
+}

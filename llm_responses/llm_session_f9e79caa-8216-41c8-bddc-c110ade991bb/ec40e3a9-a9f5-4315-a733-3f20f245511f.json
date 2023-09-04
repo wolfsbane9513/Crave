@@ -1,0 +1,88 @@
+{
+    "conversation_id": "f9e79caa-8216-41c8-bddc-c110ade991bb",
+    "start_time": "2023_08_26:14:38:12",
+    "llm": {
+        "name": "gpt-3.5-turbo",
+        "meta_data": {
+            "model": "gpt-3.5-turbo",
+            "api_wait": 60,
+            "api_retry": 6,
+            "model_type": "chat_models",
+            "temperature": 0.7,
+            "top_p": 1,
+            "n": 1,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "json_depth_limit": 20
+        }
+    },
+    "participants": [
+        {
+            "name": "User",
+            "is_bot": false
+        },
+        {
+            "name": "Assistant",
+            "is_bot": true
+        }
+    ],
+    "messages": [
+        {
+            "request_timestamp": "2023_08_26:14:38:12",
+            "prompt_id": "7bcf92a2-708d-4b5d-bc25-911b5bafe011",
+            "prompt_filename": "ner.jinja",
+            "processing_task": "You are a highly intelligent and accurate food items domain Named-entity recognition(NER) system. You take Passage as input and your task is to recognize and extract specific types of food items domain named entities in that given passage and classify into a set of following predefined entity types:\n['DISH NAME', 'TASTE LEVEL']Your output format is only [{'T': type of entity from predefined entity types, 'E': entity in the input text}},...,{{'branch' : Appropriate branch of the passage ,'group': Appropriate Group of the passage}] form, no other form. Don't include any text in response such as 'here are named entities..' etc, return only valid json\n\nInput: Cuisine: Andhra Style.\n\nAmbience: Decent clean and spacious ambiance with good seating arrangements.\n\nPrice: Not too expensive, not too cheap. Good for an average individual to have fun without losing his/her pocket.\n\nFood Recommendation: Good taste, didn't find any quality or quantity issue. Tender coconut pudding is must try, Nellore Chicken biryani, Nati mutton biryani, mutton balls, kalmi chicken kebab, Rasmali twist, Guntur chicken and bamboo chicken.\n\nStaff and Service: Staff are friendly and service is fast and they serve hot.\n\nVerdict: Nandhana Palace has won Best Andhra at Times Food & Nightlife awards 2023. Just not the andra food that lingers in your memory. The ambience and service adds to the dining experience.\nOutput:",
+            "template_metadata": {},
+            "input_prompt": {
+                "domain": "food items",
+                "labels": [
+                    "DISH NAME",
+                    "TASTE LEVEL"
+                ],
+                "examples": null,
+                "output_format": null,
+                "text_input": "Cuisine: Andhra Style.\n\nAmbience: Decent clean and spacious ambiance with good seating arrangements.\n\nPrice: Not too expensive, not too cheap. Good for an average individual to have fun without losing his/her pocket.\n\nFood Recommendation: Good taste, didn't find any quality or quantity issue. Tender coconut pudding is must try, Nellore Chicken biryani, Nati mutton biryani, mutton balls, kalmi chicken kebab, Rasmali twist, Guntur chicken and bamboo chicken.\n\nStaff and Service: Staff are friendly and service is fast and they serve hot.\n\nVerdict: Nandhana Palace has won Best Andhra at Times Food & Nightlife awards 2023. Just not the andra food that lingers in your memory. The ambience and service adds to the dining experience.",
+                "description": null
+            },
+            "response_text": "[{'T': 'DISH NAME', 'E': 'Tender coconut pudding'}, {'T': 'DISH NAME', 'E': 'Nellore Chicken biryani'}, {'T': 'DISH NAME', 'E': 'Nati mutton biryani'}, {'T': 'DISH NAME', 'E': 'mutton balls'}, {'T': 'DISH NAME', 'E': 'kalmi chicken kebab'}, {'T': 'DISH NAME', 'E': 'Rasmali twist'}, {'T': 'DISH NAME', 'E': 'Guntur chicken'}, {'T': 'DISH NAME', 'E': 'bamboo chicken'}, {'T': 'TASTE LEVEL', 'E': 'Good taste'}]",
+            "parsed_output": [
+                {
+                    "T": "DISH NAME",
+                    "E": "Tender coconut pudding"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Nellore Chicken biryani"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Nati mutton biryani"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "mutton balls"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "kalmi chicken kebab"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Rasmali twist"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "Guntur chicken"
+                },
+                {
+                    "T": "DISH NAME",
+                    "E": "bamboo chicken"
+                },
+                {
+                    "T": "TASTE LEVEL",
+                    "E": "Good taste"
+                }
+            ]
+        }
+    ]
+}
