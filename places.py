@@ -3,7 +3,7 @@ import json
 import ast
 from promptify import Prompter,OpenAI, Pipeline
 
-openai_key = "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"
+openai_key = ""
 
 sentence     =  """The patient is a 93-year-old female with a medical  				 
                 history of chronic right hip pain, osteoporosis,					
