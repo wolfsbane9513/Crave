@@ -48,7 +48,7 @@ one_shot =[[one_shot,[{'E':'garlic bread','T':'DISH NAME'},{'E':'pasta','T':'DIS
  
 def find_restaurants(location: str, cuisine: str, budget: int):
     # Set up API key and base URL
-    api_key = 'AIzaSyCy8oa7Ry-2DfKl39lFbaP5BoQDnAZZIbc'
+    api_key = ''
     base_url = 'https://places.googleapis.com/v1/places:searchText'
 
     # Set up headers for API request
